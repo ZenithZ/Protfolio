@@ -1,10 +1,18 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid px-0">
     <article class="main-image">
       <section>
         <h1>ZenithZ.io</h1>
         <span>@ZenithZ</span>
         <button class="btn btn-xl btn-light"> xl_light_button</button>
+      </section>
+    </article>
+
+    <article id="tbd" class="white-section">
+      <section>
+        <h3>Some random stuff</h3>
+        <span>blah blah blah</span>
+        <button class="btn btn-xl btn-dark"> xl_dark_button</button>
       </section>
     </article>
   </div>
@@ -52,6 +60,23 @@
 
   .second-image {
     background: url('../assets/tbd.jpg') center center;
+  }
+
+  .white-section {
+    padding: 120 10px;
+    background-color: white;
+    text-align: center;
+
+    h3 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    span {
+      display: block;
+      font-size: 1.25rem;
+      padding-bottom: 30px;
+    }
   }
 
 </style>
