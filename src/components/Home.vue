@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid px-0">
+  <div class="container-fluid px-0" id="Home">
     <article class="main-image">
       <section>
         <h1>ZenithZ.io</h1>
@@ -55,7 +55,7 @@
   }
 
   .main-image {
-    background: url('../assets/tbd.jpg') center center;
+    background: url('../assets/logo.jpg') center center;
   }
 
   .second-image {

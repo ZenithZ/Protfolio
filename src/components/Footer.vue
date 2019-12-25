@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="Footer">
     <b-nav tabs>
         <b-nav-item>Facebook</b-nav-item>
         <b-nav-item>Linkdln</b-nav-item>

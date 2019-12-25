@@ -1,27 +1,28 @@
 <template>
   <div id="app">
-    <Header />
-    <Contents />
-    <Footer />
+    <Header></Header>
+    <router-view/>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import Contents from './components/Contents.vue'
+// import Home from './components/Home.vue'
 import Footer from './components/Footer.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Contents,
+    // Home,
     Footer
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,5 +30,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#nav {
+   padding: 30px;
+   a {
+     font-weight: bold;
+     color: #2c3e50;
+     &.router-link-0exact-active {
+       color: #42b983;
+     }
+   }
 }
 </style>
