@@ -1,42 +1,24 @@
 <template>
-  <div id="Header">
-    <b-navbar toggleable="lg" type="dark" variant="info" tabs>
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
-
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item href="#">Link</b-nav-item>
-          <b-nav-item href="#" disabled>Disabled</b-nav-item>
-        </b-navbar-nav>
-
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-          <b-nav-form>
-            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-          </b-nav-form>
-
-          <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">ES</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
-            <b-dropdown-item href="#">FA</b-dropdown-item>
-          </b-nav-item-dropdown>
-
-          <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
-            <template v-slot:button-content>
-              <em>User</em>
-            </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-          </b-nav-item-dropdown>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
-  </div>
+  <b-nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="Header">
+    <div class="container">
+      <router-link class="navbar-brand js-scroll-trigger" to="/">
+        <img src="@/assets/orange-yellow-trim.png" class="logo"> 
+      </router-link>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarRespoinsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item" v-for="(linkObj, ind) in navList" :key="ind">
+            <a class="nav-link js-scroll-trigger" :href="linkObj.path">
+              {{linkObj.name}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </b-nav>
 </template>
 
 
@@ -45,10 +27,44 @@ export default {
   name: "Header",
   props: {
     msg: String
-  }
+  },
+  
+  data: () => ({
+    navList: [
+      {
+        name: 'Education',
+        path: '/eduacation'
+      },
+      {
+        name: 'Photos',
+        path: '/photos'
+      },
+      {
+        name: 'Gaming',
+        path: '/gaming'
+      },
+      {
+        name: 'Support',
+        path: '/support'
+      }
+    ]
+  })
 };
 </script>
 
 <style lang="scss">
 
-</style>
+#Header.navbar {
+  background: rgba(0, 0, 0, 0.5)
+}
+
+.logo {
+  width: 20%;
+  height: auto;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+</style> 

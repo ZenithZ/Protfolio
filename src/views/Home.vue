@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid px-0" id="Home">
-    <article class="main-image">
+    <!-- <article class="main-image">
       <section>
         <h1>ZenithZ.io</h1>
         <span>@ZenithZ</span>
@@ -14,7 +14,16 @@
         <span>blah blah blah</span>
         <button class="btn btn-xl btn-dark"> xl_dark_button</button>
       </section>
+    </article> -->
+
+    <article class="main-image">
+      <section>
+        <!-- <h1>ZenithZ.io</h1>
+        <span>@ZenithZ</span> -->
+      </section>
     </article>
+
+
   </div>
 </template>
 
@@ -55,14 +64,9 @@
   }
 
   .main-image {
-    background: url('../assets/black-purple-shade.png') no-repeat center center;
-    background-size: 100% 100%;
+    background: url('../assets/under_construction.png') no-repeat center center;
   }
 
-  .second-image {
-    background: url('../assets/logo-big.png') no-repeat center center;
-    background-size: 100% 100%;
-  }
 
   .white-section {
     padding: 120 10px;

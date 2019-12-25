@@ -23,12 +23,6 @@ export default {
       type: Boolean
     }
   }
-
-  // methods: {
-  //   changBoolean: function () {
-  //     isVisible = !isVisible;
-  //   }
-  // }
 };
 </script>
 
@@ -42,19 +36,19 @@ export default {
   h3 {
     text-align: center;
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: bold;
   }
 
   p {
     text-align: center;
     display: block;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   i {
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
     padding-top: 10px;
   }
