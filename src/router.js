@@ -4,11 +4,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 function load(componentName) {
-  return () => import(`@/components/${componentName}`)
+  return () => import(`@/views/${componentName}`)
 }
 
 const router = new VueRouter({
-  mdoe: 'history',
+  mode: 'history',
   routes: [
     {
       path: '/',

@@ -7,6 +7,30 @@
         <b-nav-item>Github</b-nav-item>
         <b-nav-item>opgg</b-nav-item>
     </b-nav>
-    <h3>Made by ZenithZ</h3>
+    <h3><br> Made by @ZenithZ</h3>
   </div>
-</template>
+</template> 
+
+<script>
+export default {
+  name: "Footer",
+  props: {
+    msg: String
+  }
+};
+</script>
+
+<style lang="scss">
+  div {
+    text-align: center;
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  h3 {
+    text-align: center;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+</style>

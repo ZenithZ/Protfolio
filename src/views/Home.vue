@@ -55,11 +55,13 @@
   }
 
   .main-image {
-    background: url('../assets/logo.jpg') center center;
+    background: url('../assets/black-purple-shade.png') no-repeat center center;
+    background-size: 100% 100%;
   }
 
   .second-image {
-    background: url('../assets/tbd.jpg') center center;
+    background: url('../assets/logo-big.png') no-repeat center center;
+    background-size: 100% 100%;
   }
 
   .white-section {
