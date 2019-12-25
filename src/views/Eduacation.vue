@@ -1,5 +1,12 @@
 <template>
-    <div> test </div>
+  <div>
+    <ul> 
+      <li> test </li> 
+      <li>
+        <i class="fab fa-facebook"></i>
+      </li> 
+    </ul>
+  </div>
 </template>
 
 <script>
