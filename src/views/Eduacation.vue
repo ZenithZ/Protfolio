@@ -38,7 +38,7 @@ export default {
 
   div{
     text-align: left;
-    padding-top: 20%;
+    padding-top: 8%;
     padding-left: 5%; 
 
     h1{
