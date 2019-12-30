@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
-import router from './router'
+import router from './plugins/router'
+import i18n from './plugins/i18n'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
@@ -21,5 +22,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  i18n,
   render: h => h(App),
 }).$mount('#app')
