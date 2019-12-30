@@ -16,10 +16,17 @@
       </section>
     </article> -->
 
-    <article class="main-image">
+    <!-- <article class="main-image">
       <section>
-        <!-- <h1>ZenithZ.io</h1>
-        <span>@ZenithZ</span> -->
+        <h1>ZenithZ.io</h1>
+        <span>@ZenithZ</span>
+      </section>
+    </article> -->
+
+    <article>
+      <section>
+        <h1>Home</h1>
+        <img src="@/assets/under_construction.png" width="100%" height=auto alt="">
       </section>
     </article>
 
@@ -27,7 +34,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
   article {
     display: flex;
@@ -35,6 +42,8 @@
     align-items: center;
     width: 100%;
     padding: 0 10px;
+
+    padding-top: 100px;
   }
 
   .btn-xl {
