@@ -92,35 +92,42 @@ export default {
   //   background: rgba(0, 0, 0, 0.5)
   // }
 
-  .btn {
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  border-radius: 50%;
-  border-color: #e7e7e7;
-  color: #e7e7e7;
-  }
+  .container {
 
-  .btn:hover {
-    background-color: #555555; 
-    border-color: #555555;
-    color: white;
+    text-align: right;;
+
+    .btn {
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      border-radius: 50%;
+      border-color: #e7e7e7;
+      color: #e7e7e7;
+      }
+
+    .btn:hover {
+      background-color: #555555; 
+      border-color: #555555;
+      color: white;
+      }
+
+    .li{
+      border-bottom: 3px solid transparent;
     }
 
-  .container li{
-    border-bottom: 3px solid transparent;
-  }
+    .li:hover {
+      border-bottom: 3px solid #e7e7e7;
+    }
 
-  .container li:hover {
-    border-bottom: 3px solid #e7e7e7;
-  }
+    .li:active {
+      border-bottom: 3px solid #e7e7e7;
+    }
 
-  .container li:active {
-    border-bottom: 3px solid #e7e7e7;
-  }
+    .b-form-input, textarea {
+      background-color: transparent;
+      border: none;;
+    }
 
-  .b-form-input, textarea {
-    background-color: transparent;
-    border: none;;
   }
+  
 
 </style> 
