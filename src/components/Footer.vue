@@ -1,5 +1,5 @@
 <template>
-  <div id="Footer">
+  <div>
     <div class="container">
       <a href="https://www.facebook.com/zenithcn"> <i class="fab fa-facebook-square"></i> </a>
       <a href="https://www.linkedin.com/in/flynn-fu-91409015b/"> <i class="fab fa-linkedin"></i> </a>
@@ -8,7 +8,7 @@
       <a v-on:click="isVisible = !isVisible"><i class="fab fa-weixin"></i></a>
     </div>
     <img v-show="isVisible" src="@/assets/QR_code.jpg"> 
-    <hr width="50%">
+    <hr width="75%">
     <h3> Made by @ZenithZ</h3>
   </div>
 </template> 
@@ -31,13 +31,13 @@ export default {
     text-align: center;
     display: block;
     font-size: 0.9rem;
-  
 
     h3 {
       text-align: center;
       display: block;
       font-size: 0.8rem;
       font-weight: bold;
+      color: #777;
     }
 
     p {
@@ -94,10 +94,4 @@ export default {
     color: #7BB32E;
   }
 
-</style>
-
-<style scoped lang="scss">
-  div {
-    padding-top: 5%
-  }
 </style>

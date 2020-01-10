@@ -1,7 +1,7 @@
 <template>
   <article>
     <section>
-      <h1>Support</h1>
+      <h1>Enquiry</h1>
       <img src="@/assets/under_construction.png" alt="">
     </section>
   </article>

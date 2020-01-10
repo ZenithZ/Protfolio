@@ -1,7 +1,7 @@
 <template>
   <article>
     <section>
-      <h1>Gaming</h1>
+      <h1>CV</h1>
       <img src="@/assets/under_construction.png" alt="">
     </section>
   </article>

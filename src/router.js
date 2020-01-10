@@ -30,14 +30,14 @@ const router = new VueRouter({
       component: load('Photos')
     },
     {
-      name: 'Gaming',
-      path: '/gaming',
-      component: load('Gaming')
+      name: 'CV',
+      path: '/cv',
+      component: load('CV')
     },
     {
-      name: 'Support',
-      path: '/support',
-      component: load('Support')
+      name: 'Enquiry',
+      path: '/enquiry',
+      component: load('Enquiry')
     }
   ]
 }) 

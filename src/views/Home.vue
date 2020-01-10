@@ -1,36 +1,14 @@
 <template>
   <div class="container-fluid px-0" id="Home">
-    <!-- <article class="main-image">
-      <section>
-        <h1>ZenithZ.io</h1>
-        <span>@ZenithZ</span>
-        <button class="btn btn-xl btn-light"> xl_light_button</button>
-      </section>
-    </article>
-
-    <article id="tbd" class="white-section">
-      <section>
-        <h3>Some random stuff</h3>
-        <span>blah blah blah</span>
-        <button class="btn btn-xl btn-dark"> xl_dark_button</button>
-      </section>
-    </article> -->
-
-    <!-- <article class="main-image">
-      <section>
-        <h1>ZenithZ.io</h1>
-        <span>@ZenithZ</span>
-      </section>
-    </article> -->
-
     <article>
-      <section>
-        <h1>Home</h1>
-        <img src="@/assets/under_construction.png" width="100%" height=auto alt="">
+      <section class="main-image">
+        <h2>Welcome to</h2>
+        <h1>ZenithZ's</h1>
+        <h3>Homepage</h3>
+        <br>
+        <button class="btn btn-xl btn-light">Click to continue</button>
       </section>
     </article>
-
-
   </div>
 </template>
 
@@ -42,7 +20,6 @@
     align-items: center;
     width: 100%;
     padding: 0 10px;
-
     padding-top: 100px;
   }
 
@@ -59,21 +36,31 @@
     text-align: center;
 
     h1 {
+      display: block;
       font-size: 5rem;
       font-weight: bold;
-      margin-bottom: 30px;
+      text-align: center;
+      color:  #5E5E5E;
     }
 
-    span {
+    h2 {
+      padding-top: 60%;
       display: block;
-      font-size: 1.6rem;
       font-weight: bold;
-      padding-bottom: 30px;
+      text-align: center;
+      color: #808080;
+    }
+
+    h3 {
+      display: block;
+      font-weight: bold;
+      text-align: center;
+      color: #696969;
     }
   }
 
   .main-image {
-    background: url('../assets/under_construction.png') no-repeat center center;
+    background: url('../assets/orange-yellow.png') center center;
   }
 
 
@@ -92,6 +79,11 @@
       font-size: 1.25rem;
       padding-bottom: 30px;
     }
+  }
+
+  #Home {
+    // background: rgba(0,0,0,0.5);
+    background: whitesmoke;
   }
 
 </style>
