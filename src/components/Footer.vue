@@ -82,11 +82,6 @@ export default {
     }
   }
 
-  .fa-heart {
-    padding-top: 0;
-    font-size: 1rem;
-  }
-
   i:hover {
     cursor: pointer;
   }

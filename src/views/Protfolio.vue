@@ -4,6 +4,7 @@
       <section>
         <h1>About Me <i class="fas fa-user-circle"></i> </h1>
         <br>
+        <img src="@/assets/under_construction.png" alt="">
         <span>
           My name is Lin Fu. Also known as Flynn and ZenithZ.
           <br><br>

@@ -1,40 +1,49 @@
 <template>
-  <div>
-    <b-jumbotron class="protfolio bg">
-      <template v-slot:header>Protfolio</template>
-      <hr class="my-4">
-      <p>
-        For my background including eduiacation, projects, experiences, courses.
-      </p>
-      <b-button variant="warning" href="/protfolio">Explore <i class="fas fa-arrow-circle-right"></i></b-button>
-    </b-jumbotron>
+  <div class="list">
+    <div class="gray bg">
+      <b-jumbotron class="protfolio">
+        <template v-slot:header>Protfolio</template>
+        <hr class="my-4">
+        <p>
+          For my background including eduiacation, projects, experiences, courses.
+        </p>
+        <b-button variant="warning" href="/protfolio">Explore <i class="fas fa-arrow-circle-right"></i></b-button>
+      </b-jumbotron>
+    </div>
 
-    <b-jumbotron class="photo bg">
-      <template v-slot:header>Photos</template>
-      <hr class="my-4">
-      <p>
-        View my photos.
-      </p>
-      <b-button variant="warning" href="/photo">Explore <i class="fas fa-arrow-circle-right"></i></b-button>
-    </b-jumbotron>
+    <div class="blue bg">
+      <b-jumbotron class="photo bg">
+        <template v-slot:header>Photos</template>
+        <hr class="my-4">
+        <p>
+          View my photos.
+        </p>
+        <b-button variant="warning" href="/photos">Explore <i class="fas fa-arrow-circle-right"></i></b-button>
+      </b-jumbotron>
+    </div>
 
-    <b-jumbotron class="CV bg">
-      <template v-slot:header>CV</template>
-      <hr class="my-4">
-      <p>
-        For my full academic CV.
-      </p>
-      <b-button variant="warning" href="/CV">Click to view <i class="fas fa-arrow-circle-right"></i></b-button>
-    </b-jumbotron>
+    <div class="green bg">
+      <b-jumbotron class="CV bg">
+        <template v-slot:header>CV</template>
+        <hr class="my-4">
+        <p>
+          For my full academic CV.
+        </p>
+        <b-button variant="warning" href="/CV">Click to view <i class="fas fa-arrow-circle-right"></i></b-button>
+      </b-jumbotron>
+    </div>
 
-    <b-jumbotron class="Enquiry bg">
-      <template v-slot:header>Enquiry</template>
-      <hr class="my-4">
-      <p>
-        Submit an enquiry.
-      </p>
-      <b-button variant="warning" href="/Enquiry">Click to continue <i class="fas fa-arrow-circle-right"></i></b-button>
-    </b-jumbotron>   
+    <div class="purple bg">
+      <b-jumbotron class="Enquiry bg">
+        <template v-slot:header>Enquiry</template>
+        <hr class="my-4">
+        <p>
+          Submit an enquiry.
+        </p>
+        <b-button variant="warning" href="/Enquiry">Click to continue <i class="fas fa-arrow-circle-right"></i></b-button>
+      </b-jumbotron>   
+    </div>
+
   </div>
 </template>
 
@@ -46,13 +55,29 @@ export default {
 
 <style lang="scss" scoped>
 
-  div {
+  .list {
     padding-top: 80px;
     background-color: white;
 
     p {
       color: #777;
     }
+  }
+
+  .gray {
+    background-color: #d3d3d3; 
+  }
+
+  .blue {
+    background-color: skyblue; 
+  }
+
+  .green {
+    background-color: #90ee90;
+  }
+
+  .purple {
+    background-color: #b2b2ff;
   }
 
   .jumbotron {
@@ -63,6 +88,10 @@ export default {
  .btn {
    color: white;
  }
+
+ .btn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
 
   .bg {
     width: auto;
