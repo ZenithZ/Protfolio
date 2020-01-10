@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <b-navbar toggleable="lg" type="dark fixed-top" variant="dark" id="Header">
+    <b-navbar class="navbar-expand-sm" toggleable="lg" type="light fixed-top" variant="light" id="Header">
       
       <router-link class="navbar-brand js-scroll-trigger" to="/">
         <img src="@/assets/orange-yellow.png" width="60" height="60" alt="">
@@ -23,27 +23,22 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          
-          <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
-            <template v-slot:button-content>
-              <em>User</em>
-            </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-          </b-nav-item-dropdown>
-
           <b-nav-item-dropdown text="Lang" right>
             <b-dropdown-item href="#">EN</b-dropdown-item>
             <b-dropdown-item href="#">CN</b-dropdown-item>
           </b-nav-item-dropdown>
 
-          <b-nav-form>
-            <b-form-input size="sm" class="mr-sm-2" placeholder="Search for..."></b-form-input>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit">
-              <i class="fas fa-search"></i>
-            </b-button>
-          </b-nav-form>
+          <!-- <b-nav-item-dropdown right>
+            <template slot="button-content"><i class="fas fa-search"></i></template>
+            <b-dropdown-item href="#">
+              <b-nav-form>
+                <b-form-input size="sm" class="mr-sm-2" placeholder="Search for..."></b-form-input>
+                <b-button size="sm" class="my-2 my-sm-0" type="submit">
+                  <i class="fas fa-search"></i>
+                </b-button>
+              </b-nav-form>
+            </b-dropdown-item>
+          </b-nav-item-dropdown> -->
 
         </b-navbar-nav>
       </b-collapse>
@@ -74,12 +69,12 @@ export default {
         path: '/photos'
       },
       {
-        name: 'Gaming',
-        path: '/gaming'
+        name: 'CV',
+        path: '/cv'
       },
       {
-        name: 'Support',
-        path: '/support'
+        name: 'Enquiry',
+        path: '/enquiry'
       }
     ]
   })
@@ -88,9 +83,10 @@ export default {
 
 <style lang="scss" scoped>
 
-  // #Header.navbar {
-  //   background: rgba(0, 0, 0, 0.5)
-  // }
+  #Header.navbar {
+    // background: rgba(0, 0, 0, 0.5)
+    font-weight: bold;
+  }
 
   .container {
 
@@ -110,16 +106,16 @@ export default {
       color: white;
       }
 
-    .li{
+    li{
       border-bottom: 3px solid transparent;
     }
 
-    .li:hover {
-      border-bottom: 3px solid #e7e7e7;
+    li:hover {
+      border-bottom: 3px solid #5E5E5E;
     }
 
-    .li:active {
-      border-bottom: 3px solid #e7e7e7;
+    li:active {
+      border-bottom: 3px solid #5E5E5E;
     }
 
     .b-form-input, textarea {

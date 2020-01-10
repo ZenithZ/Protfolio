@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
+import Vuebar from 'vuebar';
 import router from './router'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -13,6 +14,7 @@ import App from './App.vue'
 
 Vue.use(BootstrapVue)
 library.add(faFontAwesome)
+Vue.use(Vuebar);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('Header', require('./components/Header.vue').default)

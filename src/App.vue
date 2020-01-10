@@ -28,11 +28,13 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 30px;
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #555;
+    }
   }
 
   #nav {
-    padding: 30px;
     a {
       font-weight: bold;
       color: #2c3e50;
@@ -48,4 +50,5 @@ export default {
       font-weight: normal;
       text-decoration: inherit;
   }
+
 </style>

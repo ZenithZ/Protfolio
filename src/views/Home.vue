@@ -1,56 +1,20 @@
 <template>
   <div class="container-fluid px-0" id="Home">
-    <article class="main-image">
-      <section class="container"> 
-        <h1>Welcome to ZenithZ.io</h1>
-        <span>@ZenithZ</span>
-        <button class="btn btn-xl btn-dark" @click="scrollTo('ZenithZ')"> Check it out</button>
-      </section>
-    </article>
-
-    <article id="ZenithZ" class="white-section">
-      <section class="container">
-        <h3>You might know me as ZenithZ</h3>
-        <span>blah blah blah</span>
-        <button class="btn btn-xl btn-dark" @click="scrollTo('Flynn')"> Next section</button>
-      </section>
-    </article>
-
-    <article id="Flynn" class="blue-section">
-      <section class="container">
-        <h2>You might also know me as Flynn</h2>
-        <h4>blah blah blah</h4>
-        <button class="btn btn-xl btn-dark" @click="scrollTo('projects')"> Next section</button>
-      </section>
-    </article>
-
-    <article id="projects" class="white-section">
-      <section class="container">
-        <h3>Recent Projects</h3>
-        <div class="row no-gutters">
-          <div class="col-lg-6" v-for="(project,index) in recentProjects" :key="index">
-            <a href="" class="protfolio-item">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2> {{ project.title }} </h2>
-                  <p class="mb-0"> {{ project.description }} </p>
-                </span>
-              </span>
-              <img class="img-fluid" :src="require('../assets/'+project.img)"> 
-            </a>  
+    <div>
+      <article>
+        <section class="main-image">
+          <div class="centered">
+            <h2>Welcome to</h2>
+            <h1>ZenithZ's</h1>
+            <h3>Homepage</h3>
+            <br>
+            <router-link to="list">
+              <button class="btn btn-xl">Click to continue</button>
+            </router-link>
           </div>
-        </div>
-      </section>
-    </article>
-
-    <article id="contact" class="white-section">
-      <section class="container">
-        <h3>Enquires</h3>
-        <span>form tobe constructed</span>
-        <button class="btn btn-xl btn-dark" @click="scrollTo('Home')"> Back to top</button>
-      </section>
-    </article>
-
+        </section>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -101,18 +65,35 @@ export default {
 <style lang="scss" scoped>
 
   article {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 0 10px;
-    background: #FFD700;
+    padding-top: 100px;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .btn-xl {
-    padding: 20px 35px;
-    font-family: serif;
+    padding: 10px 30px;
     font-size: 1.25rem;
+    border-radius: 10px;
+    color: white;
+    font: bold;
+    background-color: #FFA500;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+  }
+
+  .btn:hover {
+    background-color: #FFB020;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
 
   .main-image, .second-image {
@@ -122,26 +103,36 @@ export default {
     text-align: center;
 
     h1 {
-      font-size: 5rem;
+      display: block;
+      font-size: 6rem;
       font-weight: bold;
+      text-align: center;
+      color:  #5E5E5E;
     }
 
     h2 {
-      font-size: 3rem;
+      padding-top: 60%;
+      display: block;
+      font-size: 4rem;
       font-weight: bold;
-      margin-bottom: 30px;
+      text-align: center;
+      color: #808080;
+      transform: translate(-35%, -5%);
     }
 
-    span {
+    h3 {
       display: block;
-      font-size: 1.6rem;
+      font-size: 4.5rem;
       font-weight: bold;
-      padding-bottom: 30px;
+      text-align: center;
+      color: #696969;
+      transform: translate(35%, 5%);
     }
   }
 
   .main-image {
-    background: url('../assets/solid-gold-background.jpg') center center;
+    background: url('../assets/orange-yellow.png') no-repeat center center;
+    background-size: cover;
   }
 
 
@@ -236,6 +227,11 @@ export default {
         font-size: 2rem;
       } 
     }
+  }
+
+  #Home {
+    // background: rgba(0,0,0,0.5);
+    background: whitesmoke;
   }
 
 </style>

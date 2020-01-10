@@ -1,5 +1,5 @@
 <template>
-  <div id="Footer">
+  <div>
     <div class="container">
       <a href="https://www.facebook.com/zenithcn"> <i class="fab fa-facebook-square"></i> </a>
       <a href="https://www.linkedin.com/in/flynn-fu-91409015b/"> <i class="fab fa-linkedin"></i> </a>
@@ -8,20 +8,32 @@
       <a v-on:click="isVisible = !isVisible"><i class="fab fa-weixin"></i></a>
     </div>
     <img v-show="isVisible" src="@/assets/QR_code.jpg"> 
-    <hr width="50%">
-    <h3> Made by @ZenithZ</h3>
+    <hr width="75%">
+    <h3> Made by ZenithZ. Last updated: {{ currentDateWithFormat }}</h3>
   </div>
 </template> 
 
 <script>
-
 export default {
   name: "Footer",
+  data: () => ({
+    currentDateWithFormat: String
+  }),
   props: {
     msg: String,
     isVisible:{
       type: Boolean
     }
+  },
+  methods:{
+    getDate: function () {
+      let currentDate = new Date();
+      let currentDateWithFormat = currentDate.toDateString().substring(4, 10) + ", " + currentDate.toDateString().substring(11, 15);
+      return this.currentDateWithFormat = currentDateWithFormat
+    }
+  },
+  mounted () {
+    this.getDate()
   }
 };
 </script>
@@ -31,13 +43,14 @@ export default {
     text-align: center;
     display: block;
     font-size: 0.9rem;
-  
+    background-color: #F8F8F8;
 
     h3 {
       text-align: center;
       display: block;
       font-size: 0.8rem;
       font-weight: bold;
+      color: #777;
     }
 
     p {
@@ -69,6 +82,10 @@ export default {
     }
   }
 
+  .fa-heart {
+    padding-top: 0;
+    font-size: 1rem;
+  }
 
   i:hover {
     cursor: pointer;
@@ -94,10 +111,4 @@ export default {
     color: #7BB32E;
   }
 
-</style>
-
-<style scoped lang="scss">
-  div {
-    padding-top: 5%
-  }
 </style>
