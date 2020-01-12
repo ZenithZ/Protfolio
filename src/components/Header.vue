@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <b-navbar class="navbar-expand-sm" toggleable="lg" type="light fixed-top" variant="light" id="Header">
+  <div class="header-fix">
+    <b-navbar class="navbar-expand-sm" toggleable="lg" type="light" variant="light" id="Header">
       
       <router-link class="navbar-brand js-scroll-trigger" to="/">
         <img src="@/assets/orange-yellow.png" width="60" height="60" alt="">
@@ -88,8 +88,10 @@ export default {
     font-weight: bold;
   }
 
-  .container {
-
+  .header-fix {
+    position: fixed;
+    width: 100%;
+    max-width: 1200px;
     text-align: right;;
 
     .btn {

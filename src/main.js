@@ -9,10 +9,14 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
 import App from './App.vue'
 
 Vue.use(BootstrapVue)
 library.add(faFontAwesome)
+Vue.use(ElementUI);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('Header', require('./components/Header.vue').default)
