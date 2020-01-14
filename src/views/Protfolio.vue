@@ -31,7 +31,7 @@
                     About Me
                     <i class="fas fa-user-circle"></i>
                   </h1>
-                  <img src="../assets/under_construction.png" alt />
+                  <img src="../assets/photos/Main.jpg" alt />
                   <span>
                     My name is Lin Fu. Also known as Flynn and ZenithZ.
                   </span>
