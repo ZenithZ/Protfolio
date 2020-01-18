@@ -9,9 +9,18 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item" v-for="(linkObj, ind) in navList" :key="ind">
+          <ul class="navbar-nav ml-auto" v-for="(linkObj, ind) in navList" :key="ind">
+            <li v-if="linkObj.name!=='Protfolio'" class="nav-item">
               <a class="nav-link js-scroll-trigger" :href="linkObj.path">{{linkObj.name}}</a>
+            </li>
+            <li v-if="linkObj.name=='Protfolio'" class="dropdown nav-item">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Protfolio <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="protfolio#about">About me</a></li>
+                <li><a href="protfolio#Education">Education</a></li>
+                <li><a href="protfolio#project">Project</a></li>
+                <li><a href="protfolio#experience">Work Experience</a></li>
+              </ul>
             </li>
           </ul>
         </b-navbar-nav>
@@ -90,7 +99,7 @@ export default {
 
 <style lang="scss" scoped>
 #Header.navbar {
-  background: rgba(0, 0, 0, 0.5);
+  // background: rgba(0, 0, 0, 0.5)
   font-weight: bold;
 }
 
@@ -100,6 +109,10 @@ export default {
   max-width: 1200px;
   text-align: right;
   z-index: 9999;
+  position: fixed;
+  top: 0;
+  padding-top: 20px;
+  background: rgba(0,0,0,0.5);
 
   .btn {
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -131,6 +144,31 @@ export default {
   textarea {
     background-color: transparent;
     border: none;
+  }
+
+  .dropdown {
+    top: 8px;
+    margin: 0 10px;
+    &:hover {
+      .dropdown-menu {
+        display: block!important;
+      }
+    }
+  }
+  .dropdown-menu {
+    li {
+      padding: 5px 10px;
+      a {
+        color: #555555;
+      }
+      &:hover {
+        background: #fbaa0f;
+        border: none;
+        a {
+          color: #fff;
+        }
+      }
+    }
   }
 }
 </style> 

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <router-view></router-view>
+    <router-view style="margin-top: 106px;"></router-view>
     <Footer></Footer>
   </div>
 </template>
@@ -26,9 +26,10 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
+    color: #2c3e50;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding-bottom: 20px;
     ::-webkit-scrollbar-thumb {
       border-radius: 10px;
       background-color: #555;

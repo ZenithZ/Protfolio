@@ -163,10 +163,10 @@ export default {
     },
     handleClose(done) {
         this.$confirm('Don\'t do it! You haven\'t donated yet!')
-          .then((res) => {
+          .then(() => {
             done();
           })
-          .catch((res) => {});
+          .catch(() => {});
       }
   }
 };

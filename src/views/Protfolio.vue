@@ -5,42 +5,14 @@
         <el-container>
           
           <el-row class="content">
-            <!-- <el-aside class="aside" width="100%">
-            <ul>
-              <li>
-                <a @click="handleScroll('about')">About-me</a>
-              </li>
-              <li>
-                <a  @click="handleScroll('Education')">Education</a>
-              </li>
-              <li>
-                <a @click="handleScroll('project')">Project</a>
-              </li>
-              <li>
-                <a @click="handleScroll('experience')">Work Experience</a>
-              </li>
-            </ul>
-          </el-aside> -->
             <el-col :span="4">
-              <el-aside class="aside" width="100%">
+              <el-aside class="aside" width="16.7%">
                 <ul>
                   <li v-for="(items,i) in navList" :key="i" @click="activeFun(items)">
-                    <a :class="{active:items.isActive}" @click="handleScroll(items.value)">
+                    <a :class="{active:items.isActive}"  @click="handleScroll(items.value)">
                       {{items.text}}
                     </a>
                   </li>
-                  <!-- <li>
-                    <a @click="handleScroll('about')">About-me</a>
-                  </li>
-                  <li>
-                    <a  @click="handleScroll('Education')">Education</a>
-                  </li>
-                  <li>
-                    <a @click="handleScroll('project')">Project</a>
-                  </li>
-                  <li>
-                    <a @click="handleScroll('experience')">Work Experience</a>
-                  </li> -->
                 </ul>
               </el-aside>
             </el-col>
@@ -53,7 +25,10 @@
                     <i class="fas fa-user-circle"></i>
                   </h1>
                   <img src="../assets/photos/Main.jpg" alt />
-                  <span>My name is Lin Fu. Also known as Flynn and ZenithZ.</span>
+                  <span>My name is Lin Fu. Also known as Flynn and ZenithZ.<br>
+                  I am a graduate of @The University of Sydney majoring Computer Sciecne and Information Systems.<br>
+                  Currently first year Master student specialising Human Computer Interaction at @The University of Melbourne.
+                  </span>
                 </div>
 
                 <!-- Education -->
@@ -82,34 +57,6 @@
                         <div>TBD</div>
                       </el-collapse-item>
                     </el-collapse>
-                    <!-- <ul>
-                      <li>
-                        Graduate of
-                        <strong>Bachelor of Computer Science and Technology</strong> majoring
-                        <strong>Computer Science</strong> and
-                        <strong>Information Systems</strong> from @
-                        <strong>The University of Sydney</strong>.
-                      </li>
-                      <li>
-                        First year
-                        <strong>Master of Information Technology</strong> specialising
-                        <strong>Human Computer Interaction</strong> at @
-                        <strong>The University of Melbourne</strong>.
-                      </li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                      <li>aaa</li>
-                    </ul>-->
                   </span>
                 </div>
 
@@ -119,119 +66,39 @@
                   <el-row :gutter="20">
                     <el-col :span="8">
                       <div class="project-item">
-                        <img src="../assets/Unimelb.jpg" alt="" srcset="">
+                        <img src="../assets/orange-yellow.png" alt="ZenithZ" srcset="">
                         <div class="item-img-box">
                           <div>
-                            <p>项目名称</p>
-                            <span>项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述</span>
+                            <p>Personal Site</p>
+                            <span>YES It is the site you are on right now :P</span>
                           </div>
                         </div>
                       </div>
                     </el-col>
                     <el-col :span="8">
                       <div class="project-item">
-                        <img src="../assets/Unimelb.jpg" alt="" srcset="">
+                        <img src="../assets/NHP.png" alt="SepsisUX" srcset="">
                         <div class="item-img-box">
                           <div>
-                            <p>项目名称</p>
-                            <span>项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述</span>
+                            <p>Sepsis UX</p>
+                            <span>README TBD</span>
                           </div>
                         </div>
                       </div>
                     </el-col>
                     <el-col :span="8">
                       <div class="project-item">
-                        <img src="../assets/Unimelb.jpg" alt="" srcset="">
+                        <img src="../assets/tbd.png" alt="" srcset="">
                         <div class="item-img-box">
                           <div>
-                            <p>项目名称</p>
-                            <span>项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述</span>
-                          </div>
-                        </div>
-                      </div>
-                    </el-col>
-                    <el-col :span="8">
-                      <div class="project-item">
-                        <img src="../assets/Unimelb.jpg" alt="" srcset="">
-                        <div class="item-img-box">
-                          <div>
-                            <p>项目名称</p>
-                            <span>项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述</span>
-                          </div>
-                        </div>
-                      </div>
-                    </el-col>
-                    <el-col :span="8">
-                      <div class="project-item">
-                        <img src="../assets/Unimelb.jpg" alt="" srcset="">
-                        <div class="item-img-box">
-                          <div>
-                            <p>项目名称</p>
-                            <span>项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述</span>
+                            <p>TBD</p>
+                            <span>TBD</span>
                           </div>
                         </div>
                       </div>
                     </el-col>
                   </el-row>
-                  
-                  <!-- <div class="project-card">
-                    <el-card class="box-card">
-                      <div slot="header" class="clearfix">
-                        <h2>项目名称</h2>
-                      </div>
-                      <img
-                        src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-                        class="image"
-                      />
-                      <div style="padding: 14px;">
-                        <h3>项目描述</h3>
-                        <span>描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容</span>
-                      </div>
-                    </el-card>
-                    <el-card class="box-card">
-                      <div slot="header" class="clearfix">
-                        <h2>项目名称</h2>
-                      </div>
-                      <img
-                        src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-                        class="image"
-                      />
-
-                      <div style="padding: 14px;">
-                        <h3>项目描述</h3>
-                        <span>描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容</span>
-                      </div>
-                    </el-card>
-                  </div>
-                  <div class="project-card">
-                    <el-card class="box-card">
-                      <div slot="header" class="clearfix">
-                        <h2>项目名称</h2>
-                      </div>
-                      <img
-                        src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-                        class="image"
-                      />
-                      <div style="padding: 14px;">
-                        <h3>项目描述</h3>
-                        <span>描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容</span>
-                      </div>
-                    </el-card>
-                    <el-card class="box-card">
-                      <div slot="header" class="clearfix">
-                        <h2>项目名称</h2>
-                      </div>
-                      <img
-                        src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-                        class="image"
-                      />
-
-                      <div style="padding: 14px;">
-                        <h3>项目描述</h3>
-                        <span>描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容</span>
-                      </div>
-                    </el-card>
-                  </div> -->
+          
                 </div>
 
                 <!-- WorKExperience -->
@@ -244,16 +111,16 @@
                           <div class="edu-header">
                             <div class="edu-header-title">
                               <div class="img">
-                                <img src="../assets/unimelb_icon.jpg" alt="UniMelb" />
+                                <img src="@/assets/NHP.png" alt="nsw" />
                               </div>
                               <div class="title">
-                                <p>The University Of Melbourne</p>
-                                <p>Master of Information Technology</p>
-                                <p>March. 2020 - March.2022 (expected)</p>
+                                <strong>NSW Health Pathdology</strong>
+                                <strong>PoCT Customer and Product Support Officer</strong>
+                                <p>Jan. 2020 - May.2020 (Expect)</p>
                               </div>
                             </div>
 
-                            <div>Courses done</div>
+                            <div>Expand Details</div>
                           </div>
                         </template>
                         <div>TBD</div>
@@ -266,16 +133,16 @@
                           <div class="edu-header">
                             <div class="edu-header-title">
                               <div class="img">
-                                <img src="../assets/unimelb_icon.jpg" alt="UniMelb" />
+                                <img src="@/assets/usyd.png" alt="usyd" />
                               </div>
                               <div class="title">
-                                <p>The University Of Melbourne</p>
-                                <p>Master of Information Technology</p>
-                                <p>March. 2020 - March.2022 (expected)</p>
+                                <strong>The University Of Sydney</strong>
+                                <strong>Academic Tutor - Human Computer Interaction</strong>
+                                <p>Jul. 2019 - Dec.2019</p>
                               </div>
                             </div>
 
-                            <div>Courses done</div>
+                            <div>Expand Details</div>
                           </div>
                         </template>
                         <div>TBD</div>
@@ -288,177 +155,47 @@
                           <div class="edu-header">
                             <div class="edu-header-title">
                               <div class="img">
-                                <img src="../assets/unimelb_icon.jpg" alt="UniMelb" />
+                                <img src="../assets/tbd.png" alt="tbd" />
                               </div>
                               <div class="title">
-                                <p>The University Of Melbourne</p>
-                                <p>Master of Information Technology</p>
-                                <p>March. 2020 - March.2022 (expected)</p>
+                                <p>Expand to view more</p>
                               </div>
                             </div>
 
-                            <div>Courses done</div>
+                            <div>Expand</div>
                           </div>
                         </template>
                         <div>TBD</div>
                         <div>TBD</div>
                       </el-collapse-item>
                     </el-collapse>
-                    <el-collapse accordion class="collapse-box">
-                      <el-collapse-item>
-                        <template slot="title">
-                          <div class="edu-header">
-                            <div class="edu-header-title">
-                              <div class="img">
-                                <img src="../assets/unimelb_icon.jpg" alt="UniMelb" />
-                              </div>
-                              <div class="title">
-                                <p>The University Of Melbourne</p>
-                                <p>Master of Information Technology</p>
-                                <p>March. 2020 - March.2022 (expected)</p>
-                              </div>
-                            </div>
-
-                            <div>Courses done</div>
-                          </div>
-                        </template>
-                        <div>TBD</div>
-                        <div>TBD</div>
-                      </el-collapse-item>
-                    </el-collapse>
-                    <!-- <ul>
-                      <li>
-                        <strong>Academic Tutor</strong> for
-                        <strong>Human Computer Interaction</strong> at @
-                        <strong>USYD</strong>
-                      </li>
-                      <li>
-                        <strong>PoCT Customer and Product Support Officer</strong> at @
-                        <strong>NSW Health Pathology</strong>
-                      </li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                      <li>tbd</li>
-                    </ul> -->
                   </span>
                 </div>
+
+                <div class="cv" ref='cv'>
+                  <h1 id="cv">
+                    CV
+                  </h1>
+                  <span>For my full academic CV, please click 
+                    <a href="Resume_LinFU _2020.pdf" target="_blank" type="application/pdf">here.</a>
+                  </span>
+                </div>
+
+                <div class="enquiry" ref='enquiry'>
+                  <h1 id="enquiry">
+                    Enquiry
+                  </h1>
+                  <span>If you are willing to submit an enquiry, please click 
+                    <a href="Resume_LinFU _2020.pdf" target="_blank" type="application/pdf">here</a> in order to navigate to the Enquiry page.
+                  </span>
+                </div>
+
               </el-main>
             </el-col>
           </el-row>
         </el-container>
-        <!-- <h1>
-          About Me
-          <i class="fas fa-user-circle"></i>
-        </h1>
-        <br />
-        <img src="@/assets/under_construction.png" alt />
-        <span>
-          My name is Lin Fu. Also known as Flynn and ZenithZ.
-          <br />
-          <br />
-          <h4>
-            <b>Education</b>
-          </h4>
-          <ul>
-            <li>
-              Graduate of
-              <b>Bachelor of Computer Science and Technology</b> majoring
-              <b>Computer Science</b> and
-              <b>Information Systems</b> from @
-              <b>The University of Sydney</b>.
-            </li>
-            <li>
-              First year
-              <b>Master of Information Technology</b> specialising
-              <b>Human Computer Interaction</b> at @
-              <b>The University of Melbourne</b>.
-            </li>
-          </ul>
-          <h4>
-            <b>Work Experiences</b>
-          </h4>
-          <ul>
-            <li>
-              <b>Academic Tutor</b> for
-              <b>Human Computer Interaction</b> at @
-              <b>USYD</b>
-            </li>
-            <li>
-              <b>PoCT Customer and Product Support Officer</b> at @
-              <b>NSW Health Pathology</b>
-            </li>
-            <li>tbd</li>
-          </ul>
-          <h4>
-            <b>Projects</b>
-          </h4>
-          <ul>
-            <li>tbd</li>
-          </ul>
-        </span>-->
       </section>
     </article>
-
-    <article class="main-image">
-      <section class="container">
-        <h1>Welcome to ZenithZ.io</h1>
-        <span>@ZenithZ</span>
-        <button class="btn btn-xl btn-dark" @click="scrollTo('ZenithZ')">Check it out</button>
-      </section>
-    </article>
-
-    <!-- <article id="ZenithZ" class="white-section">
-      <section class="container">
-        <h3>You might know me as ZenithZ</h3>
-        <span>blah blah blah</span>
-        <button class="btn btn-xl btn-dark" @click="scrollTo('Flynn')"> Next section</button>
-      </section>
-    </article>
-
-    <article id="Flynn" class="blue-section">
-      <section class="container">
-        <h2>You might also know me as Flynn</h2>
-        <h4>blah blah blah</h4>
-        <button class="btn btn-xl btn-dark" @click="scrollTo('projects')"> Next section</button>
-      </section>
-    </article>
-
-    <article id="projects" class="white-section">
-      <section class="container">
-        <h3>Recent Projects</h3>
-        <div class="row no-gutters">
-          <div class="col-lg-6" v-for="(project,index) in recentProjects" :key="index">
-            <a href="" class="protfolio-item">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2> {{ project.title }} </h2>
-                  <p class="mb-0"> {{ project.description }} </p>
-                </span>
-              </span>
-              <img class="img-fluid" :src="require('../assets/'+project.img)"> 
-            </a>  
-          </div>
-        </div>
-      </section>
-    </article>
-
-    <article id="contact" class="white-section">
-      <section class="container">
-        <h3>Enquires</h3>
-        <span>form tobe constructed</span>
-        <button class="btn btn-xl btn-dark" @click="scrollTo('Home')"> Back to top</button>
-      </section>
-    </article>-->
   </div>
 </template>
 
@@ -469,8 +206,10 @@ export default {
       {text: 'About me', isActive: true, value: 'about', key: 0},
       {text: 'Education', isActive: false, value: 'Education', key: 1},
       {text: 'Project', isActive: false, value: 'project', key: 2},
-      {text: 'Work Experience', isActive: false, value: 'experience', key: 3}
+      {text: 'Work Experience', isActive: false, value: 'experience', key: 3},
       // {text: 'Work Experience', isActive: false, value: 'experience', top: document.getElementById('experience').offsetTop, key: 3}
+      {text: 'CV', isActive: false, value: 'cv', key: 4},
+      {text: 'Enquiry', isActive: false, value: 'enquiry', key: 5}
     ]
   }),
   mounted() {
@@ -480,12 +219,18 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-    // 点击侧边栏控制叶页面滚动
+    // leftside scroll
     handleScroll(item) {
-      if (item === 'about' || item === 'project' || item === 'Education' || item === 'experience') {
+      if (item === 'about' 
+          || item === 'project' 
+          || item === 'Education' 
+          || item === 'experience'
+          || item === 'cv'
+          || item == 'enquiry') {
         var items = document.getElementById(item);
+        window.console.log('items.offsetTop', items.offsetTop)
         window.scrollTo({
-          top: items.offsetTop,
+          top: items.offsetTop + 106,
           behavior:'smooth'
         })
       }
@@ -494,7 +239,7 @@ export default {
       // })
       let elementTop = document.documentElement.scrollTop || document.documentElement.scrollTop;
       this.navList.find((item, i) => {
-        if (elementTop >= document.getElementById(item.value).offsetTop) {
+        if (elementTop >= (document.getElementById(item.value).offsetTop + 86)) {
           this.navList.forEach(function(obj){
             obj.isActive = false;
           });
@@ -504,12 +249,14 @@ export default {
             {text: 'About me', isActive: true, value: 'about', key: 0},
             {text: 'Education', isActive: false, value: 'Education', key: 1},
             {text: 'Project', isActive: false, value: 'project', key: 2},
-            {text: 'Work Experience', isActive: false, value: 'experience', key: 3}
+            {text: 'Work Experience', isActive: false, value: 'experience', key: 3},
+            {text: 'CV', isActive: false, value: 'cv', key: 4},
+            {text: 'Enquiry', isActive: false, value: 'enquiry', key: 5}
           ]
         }
       })
     },
-    // 点击侧边栏
+    // click handling left nav
     activeFun(data) {
       this.navList.forEach(function(obj){
         obj.isActive = false;
@@ -523,12 +270,9 @@ export default {
 <style lang="scss" scoped>
 div {
   text-align: left;
-  // padding-top: 8%;
-  // padding-left: 5%;
 
   .content {
-    background: #efefef;
-    // margin-top: 86px;
+    background: #181818;
     width: 100%;
     min-width: 900px;
     .aside {
@@ -536,7 +280,6 @@ div {
       position: fixed;
       z-index: 1;
       max-width: 200px;
-      transition: 0.5s;
       ul {
         li {
           border-bottom: 1px solid #333;
@@ -559,7 +302,7 @@ div {
     .main {
       margin-top: 20px;
       border-top-left-radius: 30px;
-      background: #fff;
+      background: rgba(0, 0, 0, 0.4);
       min-height: calc(100vh - 143px);
 
       .about {
@@ -666,12 +409,18 @@ div {
     }
   }
 
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
   h1 {
     font-weight: bold;
-    // text-decoration: underline;
-    // margin-bottom: 28px;
+    text-decoration: underline;
+    margin-bottom: 28px;
     line-height: 56px;
-    color: #000000;
+    color: whitesmoke;
 
     i {
       font-size: 2.25rem;
@@ -679,7 +428,7 @@ div {
   }
 
   span {
-    color: #c0c0c0;
+    color: #808080;
   }
 
   h4 {
