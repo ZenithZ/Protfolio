@@ -14,7 +14,10 @@
               <a class="nav-link js-scroll-trigger" :href="linkObj.path">{{linkObj.name}}</a>
             </li>
             <li v-if="linkObj.name=='Protfolio'" class="dropdown nav-item">
-              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Protfolio <span class="caret"></span></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  :href="linkObj.path">
+                Protfolio 
+                <span class="caret"></span>
+              </a>
               <ul class="dropdown-menu">
                 <li><a href="protfolio#about">About me</a></li>
                 <li><a href="protfolio#Education">Education</a></li>
@@ -23,14 +26,27 @@
               </ul>
             </li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li @click="changeLangEvent('en')"><a>EN</a></li>
+                <li @click="changeLangEvent('zh')"><a>CN</a></li>
+              </ul>
+            </li>
+          </ul>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
+        <!-- <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#" @click="changeLangEvent('en')">EN</b-dropdown-item>
-            <b-dropdown-item href="#" @click="changeLangEvent('zh')">CN</b-dropdown-item>
-          </b-nav-item-dropdown>
+            <ul>
+              <li @click="changeLangEvent('en')">EN</li>
+              <li @click="changeLangEvent('zh')">CN</li>
+            </ul> -->
+            <!-- <b-dropdown-item href="#" @click="changeLangEvent('en')">EN</b-dropdown-item>
+            <b-dropdown-item href="#" @click="changeLangEvent('zh')">CN</b-dropdown-item> -->
+          <!-- </b-nav-item-dropdown> -->
 
           <!-- <b-nav-item-dropdown right>
             <template slot="button-content"><i class="fas fa-search"></i></template>
@@ -43,7 +59,7 @@
               </b-nav-form>
             </b-dropdown-item>
           </b-nav-item-dropdown>-->
-        </b-navbar-nav>
+        <!-- </b-navbar-nav> -->
       </b-collapse>
     </b-navbar>
   </div>
@@ -99,7 +115,6 @@ export default {
 
 <style lang="scss" scoped>
 #Header.navbar {
-  // background: rgba(0, 0, 0, 0.5)
   font-weight: bold;
 }
 
@@ -149,26 +164,46 @@ export default {
   .dropdown {
     top: 8px;
     margin: 0 10px;
+    a {
+      color: rgba(255, 255, 255, 0.5);;
+    }
     &:hover {
       .dropdown-menu {
+        padding: none;
         display: block!important;
       }
     }
   }
+
   .dropdown-menu {
+    padding: none;
+    background: rgba(0,0,0,0.5);
     li {
       padding: 5px 10px;
+      color: #858585;
       a {
-        color: #555555;
+        color: #858585;
       }
       &:hover {
         background: #fbaa0f;
         border: none;
+        color: #fff;
         a {
           color: #fff;
         }
       }
     }
+  }
+  .ml-auto {
+    &:hover {
+      .dropdown-menu-right {
+        display: block;
+      }
+    }
+  }
+  .navbar-right {
+    position: absolute;
+    right: 0;
   }
 }
 </style> 
