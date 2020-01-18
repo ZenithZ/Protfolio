@@ -1,31 +1,26 @@
 <template>
   <div class="header-fix">
-    <b-navbar class="navbar-expand-sm" toggleable="lg" type="light" variant="light" id="Header">
-      
+    <b-navbar class="navbar-expand-sm" toggleable="lg" type="dark" id="Header">
       <router-link class="navbar-brand js-scroll-trigger" to="/">
-        <img src="@/assets/orange-yellow.png" width="60" height="60" alt="">
+        <img src="@/assets/orange-yellow.png" width="60" height="60" alt />
       </router-link>
-      
+
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>  
-
+        <b-navbar-nav>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item" v-for="(linkObj, ind) in navList" :key="ind">
-              <a class="nav-link js-scroll-trigger" :href="linkObj.path">
-                {{linkObj.name}}
-              </a>
+              <a class="nav-link js-scroll-trigger" :href="linkObj.path">{{linkObj.name}}</a>
             </li>
           </ul>
-
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">CN</b-dropdown-item>
+            <b-dropdown-item href="#" @click="changeLangEvent('en')">EN</b-dropdown-item>
+            <b-dropdown-item href="#" @click="changeLangEvent('zh')">CN</b-dropdown-item>
           </b-nav-item-dropdown>
 
           <!-- <b-nav-item-dropdown right>
@@ -38,8 +33,7 @@
                 </b-button>
               </b-nav-form>
             </b-dropdown-item>
-          </b-nav-item-dropdown> -->
-
+          </b-nav-item-dropdown>-->
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -53,79 +47,90 @@ export default {
   props: {
     msg: String
   },
-  
+
   data: () => ({
     navList: [
       {
-        name: 'Home',
-        path: '/'
+        name: "Home",
+        path: "/"
       },
       {
-        name: 'Protfolio',
-        path: '/protfolio'
+        name: "Protfolio",
+        path: "/protfolio"
       },
       {
-        name: 'Photos',
-        path: '/photos'
+        name: "Photos",
+        path: "/photos"
       },
       {
-        name: 'CV',
-        path: '/cv'
+        name: "CV",
+        path: "/cv"
       },
       {
-        name: 'Enquiry',
-        path: '/enquiry'
+        name: "Enquiry",
+        path: "/enquiry"
       }
     ]
-  })
+  }),
+
+  methods: {
+    changeLangEvent(item) {
+      localStorage.setItem("locale", item);
+      this.$i18n.locale = localStorage.getItem("locale");
+      this.$message({
+        message: "切换为中文！",
+        type: "success"
+      });
+      localStorage.setItem("locale", item);
+      this.language = item;
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+#Header.navbar {
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
 
-  #Header.navbar {
-    // background: rgba(0, 0, 0, 0.5)
-    font-weight: bold;
+.header-fix {
+  // position: fixed;
+  width: 100%;
+  max-width: 1200px;
+  text-align: right;
+  z-index: 9999;
+
+  .btn {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 50%;
+    border-color: #e7e7e7;
+    color: #e7e7e7;
   }
 
-  .header-fix {
-    position: fixed;
-    width: 100%;
-    max-width: 1200px;
-    text-align: right;;
-
-    .btn {
-      -webkit-transition-duration: 0.4s; /* Safari */
-      transition-duration: 0.4s;
-      border-radius: 50%;
-      border-color: #e7e7e7;
-      color: #e7e7e7;
-      }
-
-    .btn:hover {
-      background-color: #555555; 
-      border-color: #555555;
-      color: white;
-      }
-
-    li{
-      border-bottom: 3px solid transparent;
-    }
-
-    li:hover {
-      border-bottom: 3px solid #5E5E5E;
-    }
-
-    li:active {
-      border-bottom: 3px solid #5E5E5E;
-    }
-
-    .b-form-input, textarea {
-      background-color: transparent;
-      border: none;;
-    }
-
+  .btn:hover {
+    background-color: #555555;
+    border-color: #555555;
+    color: white;
   }
-  
 
+  li {
+    border-bottom: 3px solid transparent;
+  }
+
+  li:hover {
+    border-bottom: 3px solid #5e5e5e;
+  }
+
+  li:active {
+    border-bottom: 3px solid #5e5e5e;
+  }
+
+  .b-form-input,
+  textarea {
+    background-color: transparent;
+    border: none;
+  }
+}
 </style> 

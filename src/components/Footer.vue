@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main_container">
     <div class="container">
       <a href="https://www.facebook.com/zenithcn"> <i class="fab fa-facebook-square"></i> </a>
       <a href="https://www.linkedin.com/in/flynn-fu-91409015b/"> <i class="fab fa-linkedin"></i> </a>
@@ -39,11 +39,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  div {
+  .main_container {
     text-align: center;
     display: block;
     font-size: 0.9rem;
-    background-color: #F8F8F8;
+    background-color: rgba(0, 0, 0, 0.5);
 
     h3 {
       text-align: center;

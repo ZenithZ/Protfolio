@@ -2,16 +2,24 @@
   <div class="container-fluid px-0" id="Home">
     <div>
       <article>
+        <!-- <section class="main-image"> -->
         <section class="main-image">
-          <div class="centered">
-            <h2>Welcome to</h2>
-            <h1>ZenithZ's</h1>
-            <h3>Homepage</h3>
-            <br>
-            <router-link to="list">
-              <button class="btn btn-xl">Click to continue</button>
-            </router-link>
-          </div>
+          <el-carousel :interval="4000" height="calc(100vh - 163px)">
+            <el-carousel-item v-for="banner in banners" :key="banner">
+              <div class="centered">
+                <img :src="banner">
+                <div class="label">
+                  <h2>Welcome to</h2>
+                  <h1>ZenithZ's</h1>
+                  <h3>Homepage</h3>
+                  <br>
+                  <router-link to="list">
+                  <button class="btn btn-xl">Click to continue</button>
+                </router-link>
+                </div>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
         </section>
       </article>
     </div>
@@ -20,35 +28,13 @@
 
 <script>
 export default {
-  // data: () => ({
-  //   recentProjects: [
-  //     {
-  //       img: 'tbd.jpg',
-  //       title: 'Sepsis-ux',
-  //       description: 'NSW Pathology'
-  //     },
-  //     {
-  //       img: 'tbd.jpg',
-  //       title: 'Sepsis-ux',
-  //       description: 'NSW Pathology'
-  //     },
-  //     {
-  //       img: 'tbd.jpg',
-  //       title: 'Sepsis-ux',
-  //       description: 'NSW Pathology'
-  //     },
-  //     {
-  //       img: 'tbd.jpg',
-  //       title: 'Sepsis-ux',
-  //       description: 'NSW Pathology'
-  //     },
-  //     {
-  //       img: 'tbd.jpg',
-  //       title: 'Sepsis-ux',
-  //       description: 'NSW Pathology'
-  //     }
-  //   ]
-  // }),
+  data: () => ({
+    banners: [
+        require('@/assets/orange-yellow.png'),
+        require('@/assets/black-purple.png'),
+        require('@/assets/green-yellow.png')
+    ]
+  }),
 
   methods: {
     scrollTo(element) {
@@ -64,13 +50,23 @@ export default {
 
 <style lang="scss" scoped>
 
+  .label {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -70%);
+    transform: translate(-50%, -70%);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
   article {
     display: block;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 0 10px;
-    padding-top: 100px;
+    background-color: #080808;
   }
 
   .centered {
@@ -96,15 +92,13 @@ export default {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
 
-  .main-image, .second-image {
-    min-height: 100vh;
+  .main-image {
     background-size: cover;
-    padding: 0 10px;
     text-align: center;
 
     h1 {
       display: block;
-      font-size: 6rem;
+      font-size: 5rem;
       font-weight: bold;
       text-align: center;
       color:  #5E5E5E;
@@ -128,109 +122,15 @@ export default {
       color: #696969;
       transform: translate(35%, 5%);
     }
-  }
 
-  .main-image {
-    background: url('../assets/orange-yellow.png') no-repeat center center;
-    background-size: cover;
-  }
-
-
-  .white-section {
-    padding: 120 10px;
-    background-color: white;
-    text-align: center;
-
-    h3 {
-      font-size: 2rem;
-      font-weight: bold;
-    }
-
-    span {
-      display: block;
-      font-size: 1.25rem;
-      padding-bottom: 30px;
-    }
-
-    .row {
-      padding-top: 50px;
-    }
-
-    .protfolio-item {
-      display: block;
-      position: relative;
-      overflow: hidden;
-
-      .caption {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        z-index: 1;
-        background-color: rgba($color: #000000, $alpha: .2);
-        transition: transform .2s linear; 
-      }             
-
-      .caption-content {
-        text-align: left;
-        color: #fff;
-        margin: auto 2rem 2rem;
-      }
-
-      img {
-        transition: transform .2s linear; 
-      }
-
-      &:hover {
-        img {
-          transform: scale(.9);
-        }
-
-        .caption {
-        transform: scale(.9);
-        background-color: rgba($color: #000000, $alpha: .2);
-      }   
-      }
-    }
-  }
-
-  .blue-section {
-    padding: 120 10px;
-    background-color: #1d809f;
-    color: #fff;
-    text-align: center;
-
-    h2 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 50px;
-    }
-
-    h4 {
-      font-size: 1.6rem;
-      padding-top: 20px;
-    }
-
-    .icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 120px;
-      height: 120px;
-      background-color: white;
-      color: #1d809f;
-      border-radius: 50%;
-
-      i {
-        font-size: 2rem;
-      } 
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
   }
 
   #Home {
-    // background: rgba(0,0,0,0.5);
     background: whitesmoke;
   }
 

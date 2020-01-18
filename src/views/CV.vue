@@ -1,9 +1,11 @@
 <template>
   <article>
     <section>
-      <h1 class="centered">For my full academic CV, please click 
-        <a href="Resume_LinFU _2020.pdf" target="_blank" type="application/pdf">here.</a>         
+      <br><hr><br>
+      <h1>For my full academic CV, please click 
+        <a href="Resume_LinFU _2020.pdf" target="_blank" type="application/pdf">here.</a>      
       </h1>
+      <br><hr><br><br><br><br>
     </section>
   </article>
 </template>
@@ -20,18 +22,11 @@ export default {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 800px;
+    max-height: 500px;
     padding: 0 10px;
     padding-top: 100px;
-    background-color: #90ee90;
+    background-color: rgba(0,0,0,0.7);
     color: whitesmoke;
-  }
-
-  .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   a:link, a:visited {
@@ -39,5 +34,10 @@ export default {
     font-weight: bold;
     text-decoration: underline;
   }
+
+  hr {
+    border: 1px solid #181818;
+    border-radius: 5px;
+  }
   
-</style>>
+</style>
