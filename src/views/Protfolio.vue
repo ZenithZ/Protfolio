@@ -3,7 +3,7 @@
     <article>
       <section>
         <el-container>
-          
+
           <el-row class="content">
             <el-col :span="4">
               <el-aside class="aside" width="16.7%">
@@ -98,7 +98,7 @@
                       </div>
                     </el-col>
                   </el-row>
-          
+
                 </div>
 
                 <!-- WorKExperience -->
@@ -176,7 +176,7 @@
                   <h1 id="cv">
                     CV
                   </h1>
-                  <span>For my full academic CV, please click 
+                  <span>For my full academic CV, please click
                     <a href="Resume_LinFU _2020.pdf" target="_blank" type="application/pdf">here.</a>
                   </span>
                 </div>
@@ -185,7 +185,7 @@
                   <h1 id="enquiry">
                     Enquiry
                   </h1>
-                  <span>If you are willing to submit an enquiry, please click 
+                  <span>If you are willing to submit an enquiry, please click
                     <a href="Resume_LinFU _2020.pdf" target="_blank" type="application/pdf">here</a> in order to navigate to the Enquiry page.
                   </span>
                 </div>
@@ -221,9 +221,9 @@ export default {
   methods: {
     // leftside scroll
     handleScroll(item) {
-      if (item === 'about' 
-          || item === 'project' 
-          || item === 'Education' 
+      if (item === 'about'
+          || item === 'project'
+          || item === 'Education'
           || item === 'experience'
           || item === 'cv'
           || item == 'enquiry') {
@@ -336,7 +336,7 @@ div {
             }
           }
         }
-        
+
       }
 
       .project {

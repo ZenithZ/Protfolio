@@ -15,7 +15,7 @@
             </li>
             <li v-if="linkObj.name=='Protfolio'" class="dropdown nav-item">
               <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  :href="linkObj.path">
-                Protfolio 
+                Protfolio
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
@@ -36,30 +36,6 @@
             </li>
           </ul>
         </b-navbar-nav>
-
-        <!-- Right aligned nav items -->
-        <!-- <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown text="Lang" right>
-            <ul>
-              <li @click="changeLangEvent('en')">EN</li>
-              <li @click="changeLangEvent('zh')">CN</li>
-            </ul> -->
-            <!-- <b-dropdown-item href="#" @click="changeLangEvent('en')">EN</b-dropdown-item>
-            <b-dropdown-item href="#" @click="changeLangEvent('zh')">CN</b-dropdown-item> -->
-          <!-- </b-nav-item-dropdown> -->
-
-          <!-- <b-nav-item-dropdown right>
-            <template slot="button-content"><i class="fas fa-search"></i></template>
-            <b-dropdown-item href="#">
-              <b-nav-form>
-                <b-form-input size="sm" class="mr-sm-2" placeholder="Search for..."></b-form-input>
-                <b-button size="sm" class="my-2 my-sm-0" type="submit">
-                  <i class="fas fa-search"></i>
-                </b-button>
-              </b-nav-form>
-            </b-dropdown-item>
-          </b-nav-item-dropdown>-->
-        <!-- </b-navbar-nav> -->
       </b-collapse>
     </b-navbar>
   </div>
@@ -206,4 +182,4 @@ export default {
     right: 0;
   }
 }
-</style> 
+</style>

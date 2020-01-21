@@ -50,7 +50,7 @@ export default {
   .el-carousel__item:nth-child(2n) {
     background-color: rgba(0,0,0,0.7);
   }
-  
+
   .el-carousel__item:nth-child(2n+1) {
     background-color: rgba(0,0,0,0.7);
   }
@@ -60,5 +60,5 @@ export default {
     height: 100%;
     object-fit: cover;
   }
-  
+
 </style>
