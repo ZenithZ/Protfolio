@@ -2,7 +2,7 @@
 /node_modules
 
 # production
-/dis
+/dist
 /.firebase
 .firebaserc
 firebase.json
