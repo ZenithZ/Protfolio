@@ -1,6 +1,17 @@
+# dependencies
+/node_modules
+
+# production
+/dis
+/.firebase
+.firebaserc
+.firebase.json
+
+# Visual Studio
+/.vs
+
+# OS X
 .DS_Store
-node_modules
-/dist
 
 # local env files
 .env.local
