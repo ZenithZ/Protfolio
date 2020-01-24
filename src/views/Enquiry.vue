@@ -54,7 +54,7 @@
 
       <img class="img-box" src="../assets/enquiry.png"/>
 
-      
+
       <el-slider
         v-model="sliderValue"
         :marks="marks"
