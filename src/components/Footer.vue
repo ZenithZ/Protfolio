@@ -39,11 +39,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
   .main_container {
     text-align: center;
     display: block;
     font-size: 0.9rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    // background-color: rgba(0, 0, 0, 0.5);
 
     h3 {
       text-align: center;

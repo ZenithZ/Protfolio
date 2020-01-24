@@ -22,12 +22,12 @@
                 <div class="about" ref='about'>
                   <h1 id="about">
                     About Me
-                    <i class="fas fa-user-circle"></i>
+                    <!-- <i class="fas fa-user-circle"></i> -->
                   </h1>
                   <img src="../assets/photos/Main.jpg" alt />
                   <span>My name is Lin Fu. Also known as Flynn and ZenithZ.<br>
-                  I am a graduate of @The University of Sydney majoring Computer Sciecne and Information Systems.<br>
-                  Currently first year Master student specialising Human Computer Interaction at @The University of Melbourne.
+                  I am a graduate of @Auckland Grammar School.<br>
+                  Currently in my honours year in my Bachelor's degree majoring Computer Sciecne and Information Systems @The University of Sydney.
                   </span>
                 </div>
 
@@ -41,16 +41,16 @@
                           <div class="edu-header">
                             <div class="edu-header-title">
                               <div class="img">
-                                <img src="../assets/unimelb_icon.jpg" alt="UniMelb" />
+                                <img src="../assets/usyd.png" alt="Usyd" />
                               </div>
                               <div class="title">
-                                <p>The University Of Melbourne</p>
-                                <p>Master of Information Technology</p>
-                                <p>March. 2020 - March.2022 (expected)</p>
+                                <p>The University Of Sydney</p>
+                                <p>Bachelor of Computer Science and Technology (Honours)</p>
+                                <p>March. 2017 - March.2021 (expected)</p>
                               </div>
                             </div>
 
-                            <div>Courses done</div>
+                            <div><span>Courses done</span></div>
                           </div>
                         </template>
                         <div>TBD</div>
@@ -88,7 +88,7 @@
                     </el-col>
                     <el-col :span="8">
                       <div class="project-item">
-                        <img src="../assets/tbd.png" alt="" srcset="">
+                        <img src="../assets/tbd.png" alt="" href="https://sepsis-ux.herokuapp.com/">
                         <div class="item-img-box">
                           <div>
                             <p>TBD</p>
@@ -105,70 +105,30 @@
                 <div class="experience">
                   <h1 id="experience">Work Experience</h1>
                   <span>
-                    <el-collapse accordion class="collapse-box">
+                    <el-collapse accordion class="collapse-box" v-for="(item, i) in curExperList" :key=i>
                       <el-collapse-item>
                         <template slot="title">
                           <div class="edu-header">
                             <div class="edu-header-title">
                               <div class="img">
-                                <img src="@/assets/NHP.png" alt="nsw" />
+                                 <img src='@/assets/tbd.png' alt="nsw" />
                               </div>
                               <div class="title">
-                                <strong>NSW Health Pathdology</strong>
-                                <strong>PoCT Customer and Product Support Officer</strong>
-                                <p>Jan. 2020 - May.2020 (Expect)</p>
+                                <p><strong>{{item.title}}</strong></p>
+                                <p><strong>{{item.describe}}</strong></p>
+                                <p>{{item.time}}</p>
                               </div>
                             </div>
 
-                            <div>Expand Details</div>
+                            <div><span>Expand Details</span></div>
                           </div>
                         </template>
                         <div>TBD</div>
                         <div>TBD</div>
                       </el-collapse-item>
                     </el-collapse>
-                    <el-collapse accordion class="collapse-box">
-                      <el-collapse-item>
-                        <template slot="title">
-                          <div class="edu-header">
-                            <div class="edu-header-title">
-                              <div class="img">
-                                <img src="@/assets/usyd.png" alt="usyd" />
-                              </div>
-                              <div class="title">
-                                <strong>The University Of Sydney</strong>
-                                <strong>Academic Tutor - Human Computer Interaction</strong>
-                                <p>Jul. 2019 - Dec.2019</p>
-                              </div>
-                            </div>
 
-                            <div>Expand Details</div>
-                          </div>
-                        </template>
-                        <div>TBD</div>
-                        <div>TBD</div>
-                      </el-collapse-item>
-                    </el-collapse>
-                    <el-collapse accordion class="collapse-box">
-                      <el-collapse-item>
-                        <template slot="title">
-                          <div class="edu-header">
-                            <div class="edu-header-title">
-                              <div class="img">
-                                <img src="../assets/tbd.png" alt="tbd" />
-                              </div>
-                              <div class="title">
-                                <p>Expand to view more</p>
-                              </div>
-                            </div>
-
-                            <div>Expand</div>
-                          </div>
-                        </template>
-                        <div>TBD</div>
-                        <div>TBD</div>
-                      </el-collapse-item>
-                    </el-collapse>
+                    <!-- <p v-show="listVisible" class="check-more" @click="checkMore()">View {{moreCount}} more ></p> -->
                   </span>
                 </div>
 
@@ -186,7 +146,7 @@
                     Enquiry
                   </h1>
                   <span>If you are willing to submit an enquiry, please click 
-                    <a href="Resume_LinFU _2020.pdf" target="_blank" type="application/pdf">here</a> in order to navigate to the Enquiry page.
+                    <a href="/Enquiry">here</a> in order to navigate to the Enquiry page.
                   </span>
                 </div>
 
@@ -202,18 +162,94 @@
 <script>
 export default {
   data: () => ({
+    count: 0,     // navigation
+    moreCount: 3,    // default view 3 more.
+    listVisible: false,     // if displaying view more.
+    listCount: 2,     // default displaying 3 maximum.
+    curExperList: [],     // list view.
     navList: [
       {text: 'About me', isActive: true, value: 'about', key: 0},
       {text: 'Education', isActive: false, value: 'Education', key: 1},
       {text: 'Project', isActive: false, value: 'project', key: 2},
       {text: 'Work Experience', isActive: false, value: 'experience', key: 3},
-      // {text: 'Work Experience', isActive: false, value: 'experience', top: document.getElementById('experience').offsetTop, key: 3}
       {text: 'CV', isActive: false, value: 'cv', key: 4},
       {text: 'Enquiry', isActive: false, value: 'enquiry', key: 5}
+    ],
+
+    experienceList: [
+      {
+        img: '@/assets/NHP.png',
+        title: 'PoCT Customer & Product Support Officer',
+        describe: 'Full Time - Temporary',
+        time: 'Jan 2020 - Apr 2020(expected)',
+        list: [
+          '1',
+          '2',
+          '3'
+        ]
+      },
+      {
+        img: '@/assets/usyd.png',
+        title: 'Academic Tutor',
+        describe: 'Casual Academic Staff',
+        time: 'July 2019 - Dec 2019',
+        list: [
+          '1',
+          '2',
+          '3'
+        ]
+      },
+      {
+        img: '@/assets/tbd.png',
+        title: 'Academic Tutor',
+        describe: 'Part Time',
+        time: 'Oct 2018 - Present',
+        list: [
+          '1',
+          '2',
+          '3'
+        ]
+      },
+      {
+        img: '@/assets/tbd.png',
+        title: 'title3',
+        describe: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx3',
+        time: 'yyyyyyyyyyyyyyyyyyy3',
+        list: [
+          'tttttttttttttttttttttttt3',
+          'uuuuuuuuuuuuuuuuuuuuuuuu3',
+          'iiiiiiiiiiiiiiiiiiiiiiii3'
+        ]
+      },
+      {
+        img: '@/assets/tbd.png',
+        title: 'title4',
+        describe: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4',
+        time: 'yyyyyyyyyyyyyyyyyyy4',
+        list: [
+          'tttttttttttttttttttttttt4',
+          'uuuuuuuuuuuuuuuuuuuuuuuu4',
+          'iiiiiiiiiiiiiiiiiiiiiiii4'
+        ]
+      }
     ]
   }),
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    window.console.log(this.count)
+    if (this.experienceList.length > this.moreCount) {
+      this.listVisible = true;
+      this.curExperList = this.experienceList.slice(0, this.moreCount)
+      this.experienceList.splice(0, this.moreCount)
+      window.console.log(this.curExperList)
+      window.console.log(this.experienceList)
+      if (this.experienceList.length < this.moreCount) {
+        this.moreCount = this.experienceList.length
+      }
+      if (this.experienceList.length === 0) {
+        this.listVisible = false
+      }
+    }
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -230,16 +266,13 @@ export default {
         var items = document.getElementById(item);
         window.console.log('items.offsetTop', items.offsetTop)
         window.scrollTo({
-          top: items.offsetTop + 106,
+          top: items.offsetTop + 1,
           behavior:'smooth'
         })
       }
-      // this.navList.map((item) => {
-      //   item.top = document.getElementById('about').offsetTop
-      // })
       let elementTop = document.documentElement.scrollTop || document.documentElement.scrollTop;
       this.navList.find((item, i) => {
-        if (elementTop >= (document.getElementById(item.value).offsetTop + 86)) {
+        if (elementTop >= (document.getElementById(item.value).offsetTop)) {
           this.navList.forEach(function(obj){
             obj.isActive = false;
           });
@@ -263,6 +296,22 @@ export default {
       });
       data.isActive = !data.isActive;
     },
+
+    // View more
+    checkMore () {
+      window.console.log('1111111111111111')
+      if ((this.experienceList.length >= this.moreCount) && (this.experienceList.length !== 0) ) {
+        this.listVisible = true;
+        this.curExperList = this.curExperList.concat(this.experienceList.slice(0, this.moreCount))
+        this.experienceList.splice(0, this.moreCount)
+        if (this.experienceList.length < this.moreCount) {
+          this.moreCount = this.experienceList.length
+        }
+        if (this.experienceList.length === 0) {
+          this.listVisible = false
+        }
+      }
+    }
   }
 };
 </script>
@@ -272,10 +321,11 @@ div {
   text-align: left;
 
   .content {
-    background: #181818;
+    background: #E29C45;
     width: 100%;
     min-width: 900px;
     .aside {
+      color: #080808;
       padding-top: 70px;
       position: fixed;
       z-index: 1;
@@ -300,10 +350,13 @@ div {
     }
 
     .main {
-      margin-top: 20px;
+      margin-top: 30px;
       border-top-left-radius: 30px;
-      background: rgba(0, 0, 0, 0.4);
+      background: #080808;
       min-height: calc(100vh - 143px);
+      margin-bottom: 30px;
+      border-bottom-left-radius: 30px;
+      margin-right: -1px;
 
       .about {
         height: 200px;
@@ -321,6 +374,11 @@ div {
       }
 
       .Education, .experience {
+        .check-more {
+          text-align: center;
+          cursor: pointer;
+          color: cornflowerblue;
+        }
         .collapse-box {
           margin-bottom: 20px;
           .edu-header .edu-header-title {
@@ -328,19 +386,31 @@ div {
             display: flex;
             .img {
               img {
-                width: 100px;
-                margin: 10px 20px;
+                width: 120px;
+                margin-right: 10px;
+                object-fit: cover;
               }
             }
             .title {
+              p {
+                padding-top: 10px;
+                display:block;
+                justify-content: center;
+                line-height: 18px;
+              }
+              span {
+                display: block;
+              }
             }
           }
         }
+
         
       }
 
       .project {
         .project-item {
+          border: 10px solid #909090;
           text-align: center;
           height: 200px;
           overflow: hidden;
@@ -420,7 +490,7 @@ div {
     text-decoration: underline;
     margin-bottom: 28px;
     line-height: 56px;
-    color: whitesmoke;
+    color: #909090;
 
     i {
       font-size: 2.25rem;

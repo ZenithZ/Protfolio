@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="xs-height">
     <el-form
       style="100%"
       label-position="top"
@@ -8,29 +8,29 @@
       :rules="rules"
       ref="ruleForm"
       v-show=this.formVisible
-      >
+    >
       <el-row :gutter="20">
-        <el-col :span="12">
+        <el-col :xs="24" :sm="12">
           <el-form-item label="First Name" prop="first">
             <el-input v-model="ruleForm.first"></el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="12">
+        <el-col :xs="24" :sm="12">
           <el-form-item label="Last Name" prop="last">
             <el-input v-model="ruleForm.last"></el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="12">
+        <el-col :xs="24" :sm="12">
           <el-form-item label="Email" prop="email">
             <el-input v-model="ruleForm.email"></el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="12">
+        <el-col :xs="24" :sm="12">
           <el-form-item label="Phone" prop="phone">
             <el-input v-model="ruleForm.phone"></el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="12">
+        <el-col :xs="24" :sm="12">
           <el-form-item label="Message" prop="msg">
             <el-input type="textarea" :rows="4" v-model="ruleForm.msg"></el-input>
           </el-form-item>
@@ -44,7 +44,7 @@
       </el-row>
     </el-form>
 
-    <div class="pay">
+    <div v-show=!this.formVisible class="pay">
       <h3><b>Your Enquiry has been received</b></h3><br>
       <h4>
         <b>Kindly</b> Support <span>ME</span> with your donation.
@@ -52,7 +52,7 @@
         <p>Thank you!</p>
       </h4>
 
-      <img class="img-box" src="../assets/Unimelb.jpg"/>
+      <img class="img-box" src="../assets/enquiry.png"/>
 
       
       <el-slider
@@ -118,7 +118,7 @@ export default {
         40: '$40',
         50: '$50'
       },
-      formVisible: false,
+      formVisible: true,
       ruleForm: {
         first: "",
         last: "",
@@ -219,6 +219,12 @@ article {
       font-style: bold;
       font-size: 18px;
     }
+  }
+}
+
+@media (max-width: 770px) {
+  .xs-height {
+    height: 700px;
   }
 }
 

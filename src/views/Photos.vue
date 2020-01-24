@@ -3,8 +3,8 @@
     <section>
       <el-carousel :interval="4000" height="calc(100vh - 163px)">
         <el-carousel-item v-for="item in photos" :key="item">
-          <img :src="item">
           <!-- <h3>{{ item }}</h3> -->
+          <img :src="item">
         </el-carousel-item>
       </el-carousel>
     </section>
@@ -48,17 +48,26 @@ export default {
 <style lang="scss" scoped>
 
   .el-carousel__item:nth-child(2n) {
-    background-color: rgba(0,0,0,0.7);
+    background-color: #080808;
   }
   
   .el-carousel__item:nth-child(2n+1) {
-    background-color: rgba(0,0,0,0.7);
+    background-color: #080808;
   }
 
   img {
     width: auto;
     height: 100%;
     object-fit: cover;
+  }
+
+  .section {
+    margin-top: 30px;
+    border-top-left-radius: 30px;
+    background: #181818;
+    min-height: calc(100vh - 143px);
+    margin-bottom: 30px;
+    border-bottom-left-radius: 30px;
   }
   
 </style>

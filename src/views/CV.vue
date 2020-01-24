@@ -26,11 +26,11 @@ export default {
     padding: 0 10px;
     padding-top: 100px;
     background-color: rgba(0,0,0,0.7);
-    color: whitesmoke;
+    color: #808080;
   }
 
   a:link, a:visited {
-    color: whitesmoke;
+    // color: whitesmoke;
     font-weight: bold;
     text-decoration: underline;
   }

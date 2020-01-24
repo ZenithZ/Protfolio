@@ -9,26 +9,32 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <ul class="navbar-nav ml-auto" v-for="(linkObj, ind) in navList" :key="ind">
-            <li v-if="linkObj.name!=='Protfolio'" class="nav-item">
-              <a class="nav-link js-scroll-trigger" :href="linkObj.path">{{linkObj.name}}</a>
+          <ul class="navbar-nav ml-auto" >
+            <li class="nav-item dropdown" v-for="(linkObj, ind) in navList" :key="ind">
+              <span v-if="linkObj.name!=='Protfolio'">
+                <a class="nav-link js-scroll-trigger" :href="linkObj.path">{{linkObj.name}}</a>
+              </span>
+              
+              <span  v-if="linkObj.name=='Protfolio'">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  :href="linkObj.path">
+                  Protfolio 
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="protfolio#about">About me</a></li>
+                  <li><a href="protfolio#Education">Education</a></li>
+                  <li><a href="protfolio#project">Project</a></li>
+                  <li><a href="protfolio#experience">Work Experience</a></li>
+                </ul>
+              </span>
             </li>
-            <li v-if="linkObj.name=='Protfolio'" class="dropdown nav-item">
-              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  :href="linkObj.path">
-                Protfolio 
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="protfolio#about">About me</a></li>
-                <li><a href="protfolio#Education">Education</a></li>
-                <li><a href="protfolio#project">Project</a></li>
-                <li><a href="protfolio#experience">Work Experience</a></li>
-              </ul>
+            <li>
+              
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Langs <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li @click="changeLangEvent('en')"><a>EN</a></li>
                 <li @click="changeLangEvent('zh')"><a>CN</a></li>
@@ -102,10 +108,18 @@ export default {
     changeLangEvent(item) {
       localStorage.setItem("locale", item);
       this.$i18n.locale = localStorage.getItem("locale");
-      this.$message({
-        message: "切换为中文！",
-        type: "success"
-      });
+      if(item=="zh") {
+        this.$message({
+          message: "已切换为中文",
+          type: "success"
+        });
+      } else if (item=="en") {
+        this.$message({
+          message: "Changed to English",
+          type: "success"
+        });
+      }
+
       localStorage.setItem("locale", item);
       this.language = item;
     }
@@ -115,6 +129,7 @@ export default {
 
 <style lang="scss" scoped>
 #Header.navbar {
+  // background: rgba(0, 0, 0, 0.5)
   font-weight: bold;
 }
 
@@ -165,7 +180,8 @@ export default {
     top: 8px;
     margin: 0 10px;
     a {
-      color: rgba(255, 255, 255, 0.5);;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: -8px;
     }
     &:hover {
       .dropdown-menu {
@@ -177,7 +193,7 @@ export default {
 
   .dropdown-menu {
     padding: none;
-    background: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.5);
     li {
       padding: 5px 10px;
       color: #858585;
@@ -203,6 +219,13 @@ export default {
   }
   .navbar-right {
     position: absolute;
+    right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-fix .navbar-right {
+    position: initial!important;
     right: 0;
   }
 }
