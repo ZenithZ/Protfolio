@@ -50,7 +50,7 @@ export default {
   .el-carousel__item:nth-child(2n) {
     background-color: #080808;
   }
-  
+
   .el-carousel__item:nth-child(2n+1) {
     background-color: #080808;
   }

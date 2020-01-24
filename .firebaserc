@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "personalsite-865ab"
+  },
+    "appAssociation": "AUTO",
+    "rewrites": [
+      {
+        "source": "/link/**",
+        "dynamicLinks": true
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
